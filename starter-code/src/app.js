@@ -59,12 +59,46 @@ console.log(joao.receiveDamage(2)); // test for died in combat
 console.log(joao.battleCry()); // 
 
 // Saxon
-class Saxon { }
+//class Saxon { }
+class Saxon extends Soldier { 
+  constructor(healthArg, strengthArg){ //
 
+    super(healthArg, strengthArg) // attack
+  }
+
+
+receiveDamage(damage) {
+  this.healthArg = this.healthArg - damage;
+
+  if(this.healthArg > 0){
+    return `A Saxon has received ${damage} points of damage`
+  } else if (this.healthArg <= 0) {
+    return `A Saxon has died in combat`
+  }}
+}
+
+  let saxonSoldier = new Saxon (6, 7); 
+  console.log(saxonSoldier.strengthArg); 
+  console.log(saxonSoldier.attack()); 
+  console.log(saxonSoldier.receiveDamage(10));
+
+
+let vikingArmy;
+let saxonArmy;
 // War
-class War { }
+class War {
+constructor () {
+  vikingArmy = [];
+  saxonArmy = [];
+}
+addViking(viking) {
+  vikingArmy.push(viking);
+}
+}
 
 
+console.log(vikingArmy);
+console.log(addViking("Jon"));  
 
 /* ALL TESTS COMMENTED OUT
 // describe("Soldier", function () {
